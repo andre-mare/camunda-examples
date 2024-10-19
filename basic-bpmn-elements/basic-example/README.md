@@ -58,7 +58,7 @@ curl --location --request POST 'http://localhost:8080/engine-rest/process-defini
 ## View Camunda Admin Console
 To view the Camunda Admin Console, type the following url in your browser while the application is running. You will be prompted with the login screen.
 
-* [http://localhost:8080/][Camunda_Admin]
+* [http://localhost:8080/](http://localhost:8080/)
 
 After you have typed the above URL in a browser while the application is running, you will be prompted with the login screen. The image display the default settings for the H2 console and will allow you to login withou a password.
 
