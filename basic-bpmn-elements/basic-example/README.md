@@ -1,13 +1,20 @@
-# Create a Spring Boot application with CamundaBPM Engine
-This post contains a step-by-step guide on how to create a simple Spring Boot application containing the Camunda BPM Engine and a simple BPMN process. Camunda BPM is an open-source workflow and decision automation platform.
+# Guide: Building a Spring Boot Application with Camunda BPM Engine
 
-**Beyond Engineering Article:** [https://www.beyondengineering.io/how-to-create-a-camunda-bpm-spring-boot-application/](https://www.beyondengineering.io/how-to-create-a-camunda-bpm-spring-boot-application/)
+This guide provides a sampling of how to embed the Camunda BPM Engine in a simple Spring Boot application to automate
+workflows using a basic BPMN process. As you explore more Camunda and Spring Boot examples, you’ll discover additional
+use cases and advanced features.
+
+This guide is designed to give you a quick introduction to Camunda BPM with Spring Boot. If you want to start your own
+Spring Boot-based project with Camunda, visit Camunda Spring Initializr, enter your project details, add the necessary
+dependencies, and download the project as a zip file.
+
+* [Beyond Engineering Article](https://www.beyondengineering.io/guide-build-spring-boot-application-camunda-bpm-engine/)
 
 ## Pre-Requisites
 The following is required to run the Spring Boot example:
-* [curl](https://www.javanibble.com/how-to-install-curl-on-macos-using-homebrew/)
-* jq
-* [maven](https://www.javanibble.com/how-to-install-maven-on-macos-using-homebrew/)
+* [curl](https://formulae.brew.sh/formula/curl)
+* [jq](https://formulae.brew.sh/formula/jq)
+* [maven](https://formulae.brew.sh/formula/maven)
 
 ## Compile & Run The Example
 ### 1. Compile the application
