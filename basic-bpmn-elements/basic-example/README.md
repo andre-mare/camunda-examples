@@ -8,7 +8,7 @@ This guide is designed to give you a quick introduction to Camunda BPM with Spri
 Spring Boot-based project with Camunda, visit Camunda Spring Initializr, enter your project details, add the necessary
 dependencies, and download the project as a zip file.
 
-* [Beyond Engineering Article](https://www.beyondengineering.io/guide-build-spring-boot-application-camunda-bpm-engine/)
+For more information: [Beyond Engineering Article](https://www.beyondengineering.io/guide-build-spring-boot-application-camunda-bpm-engine/)
 
 ## Pre-Requisites
 The following is required to run the Spring Boot example:
@@ -62,14 +62,14 @@ To view the Camunda Admin Console, type the following url in your browser while 
 
 After you have typed the above URL in a browser while the application is running, you will be prompted with the login screen. The image display the default settings for the H2 console and will allow you to login withou a password.
 
-<img width="100%" src="https://www.javanibble.com/assets/images/posts/camunda-spring-boot/camunda_server_login.png"/>
+<img width="100%" src="https://www.beyondengineering.io/assets/images/posts/camunda-spring-boot/camunda_server_login.png"/>
 
 Type the Username and Password you set within the application properties file. Once you have successfully authenticated, you will be see the Admin Dashboard.
 
 * Username: demo
 * Password: demo
 
-<img width="100%" src="https://www.javanibble.com/assets/images/posts/camunda-spring-boot/camunda_server_dashboard.png"/>
+<img width="100%" src="https://www.beyondengineering.io/assets/images/posts/camunda-spring-boot/camunda_server_dashboard.png"/>
 
 ## View the H2 Console
 To view the H2 Console, type the following url in your browser while the application is running. You will be prompted with the login screen.
