@@ -16,4 +16,4 @@ workflows with minimal setup.
 * [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-exclusive-gateway/README.md)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
