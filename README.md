@@ -20,6 +20,7 @@ workflows with minimal setup.
 * [BPMN: Conditional Event](basic-bpmn-elements/bpmn-event-conditional-event/)
 * [BPMN: Escalation Event](basic-bpmn-elements/bpmn-event-escalation-event/)
 * [BPMN: Message Event](basic-bpmn-elements/bpmn-event-message-event/)
+* [BPMN: Timer Event](basic-bpmn-elements/bpmn-event-timer-event/)
 
 **BPMN Gateways**
 * [BPMN: Event-based Gateway](basic-bpmn-elements/bpmn-gateway-event-based-gateway/)
