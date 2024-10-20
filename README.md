@@ -16,19 +16,19 @@ workflows with minimal setup.
 * [Basic: Spring Boot Application with Camunda BPM Engine](basic-bpmn-elements/basic-example/README.md)
 
 **BPMN Events**
-* [BPMN: Cancel Event](basic-bpmn-elements/bpmn-event-cancel-event/README.md)
-* [BPMN: Conditional Event](basic-bpmn-elements/bpmn-event-conditional-event/README.md)
-* [BPMN: Escalation Event](basic-bpmn-elements/bpmn-event-escalation-event/README.md)
-* [BPMN: Message Event](basic-bpmn-elements/bpmn-event-message-event/README.md)
+* [BPMN: Cancel Event](basic-bpmn-elements/bpmn-event-cancel-event/)
+* [BPMN: Conditional Event](basic-bpmn-elements/bpmn-event-conditional-event/)
+* [BPMN: Escalation Event](basic-bpmn-elements/bpmn-event-escalation-event/)
+* [BPMN: Message Event](basic-bpmn-elements/bpmn-event-message-event/)
 
 **BPMN Gateways**
-* [BPMN: Event-based Gateway](basic-bpmn-elements/bpmn-gateway-event-based-gateway/README.md)
-* [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-exclusive-gateway/README.md)
-* [BPMN: Inclusive Gateway](basic-bpmn-elements/bpmn-gateway-inclusive-gateway/README.md)
-* [BPMN: Parallel Gateway](basic-bpmn-elements/bpmn-gateway-parallel-gateway/README.md)
+* [BPMN: Event-based Gateway](basic-bpmn-elements/bpmn-gateway-event-based-gateway/)
+* [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-exclusive-gateway/)
+* [BPMN: Inclusive Gateway](basic-bpmn-elements/bpmn-gateway-inclusive-gateway/)
+* [BPMN: Parallel Gateway](basic-bpmn-elements/bpmn-gateway-parallel-gateway/)
 
 **BPMN Tasks**
-* [BPMN: Service Task](basic-bpmn-elements/bpmn-task-service-task/README.md)
+* [BPMN: Service Task](basic-bpmn-elements/bpmn-task-service-task/)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
