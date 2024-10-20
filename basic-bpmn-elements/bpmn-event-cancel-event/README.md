@@ -1,4 +1,4 @@
-# Guide: Guide: Implement a BPMN Cancel Event in Camunda with Spring Boot
+# Guide: Implement a BPMN Cancel Event in Camunda with Spring Boot
 
 In this guide, we’ll walk you through implementing a BPMN Cancel Event in a Spring Boot application using Camunda. A 
 Cancel Event is crucial in BPMN processes that involve transactions, allowing you to cancel an ongoing transaction and 
