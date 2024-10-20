@@ -4,10 +4,6 @@ This guide provides a sampling of how to embed the Camunda BPM Engine in a simpl
 workflows using a basic BPMN process. As you explore more Camunda and Spring Boot examples, you’ll discover additional
 use cases and advanced features.
 
-This guide is designed to give you a quick introduction to Camunda BPM with Spring Boot. If you want to start your own
-Spring Boot-based project with Camunda, visit Camunda Spring Initializr, enter your project details, add the necessary
-dependencies, and download the project as a zip file.
-
 ## BPMN Process Model
 The following BPMN Process Model is used in this example:
 
