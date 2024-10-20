@@ -13,7 +13,7 @@ functionality of each BPMN element, while also showing how to configure and use 
 workflows with minimal setup.
 
 * [Basic: Spring Boot Application with Camunda BPM Engine](basic-bpmn-elements/basic-example/README.md)
-* [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-event-based-gateway/README.md)
+* [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-exclusive-gateway/README.md)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
