@@ -10,10 +10,10 @@ spring.h2.console:
 
 migration:
   sourceDefinition:
-    key: "send-personal-message"
+    key: "motor-finance-application"
     version: "1.0.0"
   targetDefinition:
-    key: "send-personal-message"
+    key: "motor-finance-application"
     version: "2.0.0"
   updateEventTriggers: false
   skipIoMappings: false
