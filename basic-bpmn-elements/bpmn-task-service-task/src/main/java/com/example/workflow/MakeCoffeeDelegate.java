@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("makeCoffee")
 public class MakeCoffeeDelegate implements JavaDelegate {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(RetrieveCoffeeOrderDelegate.class.getName());
+    private final Logger LOGGER = LoggerFactory.getLogger(MakeCoffeeDelegate.class.getName());
 
     public void execute(DelegateExecution execution) throws Exception {
         String coffeeOrder = (String) execution.getVariable("order");
