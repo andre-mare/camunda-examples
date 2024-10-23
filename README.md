@@ -13,7 +13,7 @@ functionality of each BPMN element, while also showing how to configure and use 
 workflows with minimal setup.
 
 **Base Setup**
-* [Basic: Spring Boot Application with Camunda BPM Engine](basic-bpmn-elements/basic-example/README.md)
+* [Basic: Spring Boot Application with Camunda BPM Engine](basic-bpmn-elements/basic-example/)
 
 **BPMN Events**
 * [BPMN: Cancel Event](basic-bpmn-elements/bpmn-event-cancel-event/)
@@ -30,6 +30,9 @@ workflows with minimal setup.
 
 **BPMN Tasks**
 * [BPMN: Service Task](basic-bpmn-elements/bpmn-task-service-task/)
+
+## Process Migration Examples
+* [Migration: Activity Match](process-instance-migration/ex1-migration-with-activity-match)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
