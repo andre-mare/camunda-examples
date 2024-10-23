@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.25.0">
+  <bpmn:process id="send-personal-message" name="Send Personal Message" isExecutable="true" camunda:versionTag="1.0.0" camunda:historyTimeToLive="180">
+    <bpmn:startEvent id="start_event_send_message" name="Send Personal Message">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="simNextFire" value="${g.timesPerDay(&#34;processStarted&#34;,&#34;02:00&#34;,&#34;22:00&#34;, 77)}" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="end_event_send_message" name="Personal Message Sent">
+      <bpmn:incoming>SequenceFlow_13kgjwo</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow1" sourceRef="start_event_send_message" targetRef="service_task_select_department" />
+    <bpmn:sequenceFlow id="SequenceFlow_18o7zqy" sourceRef="service_task_select_department" targetRef="ExclusiveGateway_Department_Split" />
+    <bpmn:serviceTask id="service_task_select_department" name="Select Department" camunda:delegateExpression="${selectDepartment}">
+      <bpmn:incoming>SequenceFlow1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18o7zqy</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_Department_Split" name="Message from which Department?">
+      <bpmn:incoming>SequenceFlow_18o7zqy</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_14cynn5</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0ny8yfe</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_14cynn5" name="Finance" sourceRef="ExclusiveGateway_Department_Split" targetRef="user_task_message_finance">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{department=='Finance'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_0ny8yfe" name="HR" sourceRef="ExclusiveGateway_Department_Split" targetRef="user_task_message_hr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{department=='HR'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1qmev44" sourceRef="user_task_message_hr" targetRef="ExclusiveGateway_Department_Merge" />
+    <bpmn:userTask id="user_task_message_hr" name="Create Message from HR">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="simNextFire" value="${g.nowPlusMinutes(g.uniformInt(1, 3))}" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0ny8yfe</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qmev44</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_09foba9" sourceRef="user_task_message_finance" targetRef="ExclusiveGateway_Department_Merge" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_Department_Merge">
+      <bpmn:incoming>SequenceFlow_09foba9</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1qmev44</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_13kgjwo</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_13kgjwo" sourceRef="ExclusiveGateway_Department_Merge" targetRef="end_event_send_message" />
+    <bpmn:userTask id="user_task_message_finance" name="Create Message from Finance">
+      <bpmn:incoming>SequenceFlow_14cynn5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_09foba9</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="send-personal-message">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="start_event_send_message">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="154" y="144" width="73" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0fkea3f_di" bpmnElement="end_event_send_message">
+        <dc:Bounds x="1012" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="995" y="150" width="71" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_16vok30_di" bpmnElement="service_task_select_department">
+        <dc:Bounds x="280" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0vgkf2i_di" bpmnElement="ExclusiveGateway_Department_Split" isMarkerVisible="true">
+        <dc:Bounds x="445" y="95" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="435" y="50" width="70" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1b9nosk_di" bpmnElement="user_task_message_hr">
+        <dc:Bounds x="590" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1u84na3_di" bpmnElement="ExclusiveGateway_Department_Merge" isMarkerVisible="true">
+        <dc:Bounds x="795" y="95" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1k806rr_di" bpmnElement="user_task_message_finance">
+        <dc:Bounds x="590" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_08va5r8_di" bpmnElement="SequenceFlow1">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="280" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="228" y="95" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_18o7zqy_di" bpmnElement="SequenceFlow_18o7zqy">
+        <di:waypoint x="380" y="120" />
+        <di:waypoint x="445" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496.5" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_14cynn5_di" bpmnElement="SequenceFlow_14cynn5">
+        <di:waypoint x="495" y="120" />
+        <di:waypoint x="590" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="509" y="102" width="40" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ny8yfe_di" bpmnElement="SequenceFlow_0ny8yfe">
+        <di:waypoint x="470" y="145" />
+        <di:waypoint x="470" y="250" />
+        <di:waypoint x="590" y="250" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="523" y="223" width="16" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qmev44_di" bpmnElement="SequenceFlow_1qmev44">
+        <di:waypoint x="690" y="250" />
+        <di:waypoint x="820" y="250" />
+        <di:waypoint x="820" y="145" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_09foba9_di" bpmnElement="SequenceFlow_09foba9">
+        <di:waypoint x="690" y="120" />
+        <di:waypoint x="795" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_13kgjwo_di" bpmnElement="SequenceFlow_13kgjwo">
+        <di:waypoint x="845" y="120" />
+        <di:waypoint x="1012" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
