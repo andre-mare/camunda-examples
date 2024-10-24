@@ -12,27 +12,15 @@ how it is integrated within a Spring Boot application. These examples are design
 functionality of each BPMN element, while also showing how to configure and use Camunda’s process engine to automate 
 workflows with minimal setup.
 
-**Base Setup**
-* [Basic: Spring Boot Application with Camunda BPM Engine](basic-bpmn-elements/basic-example/)
-
-**BPMN Events**
-* [BPMN: Cancel Event](basic-bpmn-elements/bpmn-event-cancel-event/)
-* [BPMN: Conditional Event](basic-bpmn-elements/bpmn-event-conditional-event/)
-* [BPMN: Escalation Event](basic-bpmn-elements/bpmn-event-escalation-event/)
-* [BPMN: Message Event](basic-bpmn-elements/bpmn-event-message-event/)
-* [BPMN: Timer Event](basic-bpmn-elements/bpmn-event-timer-event/)
-
-**BPMN Gateways**
-* [BPMN: Event-based Gateway](basic-bpmn-elements/bpmn-gateway-event-based-gateway/)
-* [BPMN: Exclusive Gateway](basic-bpmn-elements/bpmn-gateway-exclusive-gateway/)
-* [BPMN: Inclusive Gateway](basic-bpmn-elements/bpmn-gateway-inclusive-gateway/)
-* [BPMN: Parallel Gateway](basic-bpmn-elements/bpmn-gateway-parallel-gateway/)
-
-**BPMN Tasks**
-* [BPMN: Service Task](basic-bpmn-elements/bpmn-task-service-task/)
+* [Examples: Basic BPMN elements](basic-bpmn-elements/)
 
 ## Process Migration Examples
-* [Migration: Activity Match](process-instance-migration/ex1-migration-with-activity-match)
+Process Instance Migration is the process of moving running process instances from one process definition to another,
+typically due to updates or changes in the workflow. It ensures that active instances can continue running according to
+the new process definition without disruption.
 
+* [Examples: Process Instance Migration](process-instance-migration/)
+
+---
 ## License
 This project is licensed under the [MIT License](LICENSE).

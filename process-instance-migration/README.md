@@ -24,3 +24,7 @@ process definition to the activities within the target process definition exist.
 there is also a data consistency issue.
 
 * [Example Code](ex3-migration-with-data-consistency/)
+
+---
+## License
+This project is licensed under the [MIT License](LICENSE).
